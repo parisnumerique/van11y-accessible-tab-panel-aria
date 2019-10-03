@@ -4,8 +4,7 @@
  * License MIT: https://github.com/nico3333fr/van11y-accessible-tab-panel-aria/blob/master/LICENSE
  */
 (doc => {
-
-    'use strict';
+    "use strict";
 
     const TABS_JS = 'js-tabs';
     const TABS_JS_LIST = 'js-tablist';
@@ -159,19 +158,16 @@
         }
     }
 
-
-    /** Find all tabs inside a container
-     * @param  {Node} node Default document
-     * @return {Array}
-     */
-    const $listTabs = (node = doc) => [].slice.call(node.querySelectorAll('.' + TABS_JS));
-
-
     /**
      * Build tooltips for a container
      * @param  {Node} node
      */
     const attach = (node) => {
+      /** Find all tabs inside a container (after onload event)
+       * @param  {Node} node Default document
+       * @return {Array}
+       */
+      const $listTabs = (node = doc) => [].slice.call(node.querySelectorAll('.' + TABS_JS));
 
         $listTabs(node)
             .forEach((tabs_node) => {
